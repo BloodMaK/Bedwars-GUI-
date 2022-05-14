@@ -1,0 +1,33 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Elmo Gaming V5", "Ocean")
+
+ - Tabs
+
+local Tab1 = Window:NewTab("Bedwars")
+local Tab1Section = Tab1:NewSection("Bedwars lol")
+
+ - Buttons/Windows/idk
+
+Tab1Section:NewButton("Infjump, "Activates INF Jump", function()
+    local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+
+Tab1Section:NewToggle("Fligth", "Flight Bruh", function(state)
+    if state then
+        game.Workspace.Gravity = 60 
+    else
+        game.Workspace.Gravity = 50
+    end
+end)
+
+Tab1Section:NewSlider("Speed", "SpeedLol", 250, 120, function(v) -- 500
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+end)
+
+Tab1Section:NewTextBox("RektSky", "Activates RektSky", function(txt)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
+end)
